@@ -202,7 +202,7 @@ async function scrapeHomepageColors(domain) {
 // ─────────────────────────────────────────────────────────────
 
 const WIZARD_STEPS = [
-  { id:'name',        title:"What's the business name?",         sub:'This is how they'll appear in the admin and on their funnel pages.', field:'name' },
+  { id:'name',        title:"What's the business name?",         sub:"This is how they'll appear in the admin and on their funnel pages.", field:'name' },
   { id:'contact',     title:'How do we reach them?',             sub:'Phone and email for internal records.', field:'contact' },
   { id:'location',    title:'Where are they located?',           sub:'City, state, zip, and the area they serve.', field:'location' },
   { id:'domain',      title:"What's their website?",             sub:"We'll scrape it for brand colors and context.", field:'domain' },
