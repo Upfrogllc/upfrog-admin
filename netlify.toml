@@ -1,5 +1,5 @@
 [build]
-  base    = "upfrog-admin/upfrog-admin"
+  base = "upfrog-admin/upfrog-admin"
   command = "npm run build"
   publish = "dist"
 
