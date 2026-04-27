@@ -7,6 +7,7 @@ import {
 import { VERTICALS, VERTICAL_LIST, REGION_PRESETS } from './data/verticals';
 import { generateFunnelHTML, generateWorkerSnippet, downloadXLSX } from './lib/generateHTML';
 import { setupClientPortal as authSetupPortal } from './lib/auth';
+import AttomProspect from './AttomProspect.jsx';  // ← NEW: ATTOM Prospect screen
 
 // ─────────────────────────────────────────────────────────────
 // DESIGN TOKENS
@@ -1070,6 +1071,10 @@ export default function App() {
     <>
       <NavItem icon="⊞" label="Dashboard" active={screen==='dashboard'} onClick={()=>setScreen('dashboard')} count={clients.length} />
       <NavItem icon="+" label="New client" active={screen==='new'} onClick={()=>setScreen('new')} />
+
+      {/* ─── NEW: ATTOM Prospect Search ─── */}
+      <NavItem icon="🏠" label="ATTOM Prospect" active={screen==='attom'} onClick={()=>setScreen('attom')} />
+
       <div style={{ margin:'16px 0 8px', fontSize:10, fontWeight:600, color:'#334155', letterSpacing:'1px', textTransform:'uppercase', paddingLeft:12 }}>Verticals</div>
       {VERTICAL_LIST.filter(v=>v.status==='live').map(v=>(
         <NavItem key={v.id} icon={v.icon} label={v.label} active={false}
@@ -1109,6 +1114,10 @@ export default function App() {
           onBack={()=>setScreen('dashboard')}
         />
       )}
+
+      {/* ─── NEW: ATTOM Prospect screen ─── */}
+      {screen==='attom' && <AttomProspect />}
+
     </Shell>
   );
 }
